@@ -1,13 +1,13 @@
 package ru.neura.iotable
 
 import androidx.recyclerview.widget.RecyclerView
-import java.util.ArrayList
+import java.util.*
 
 /**
  * Created by agladkov on 25.12.17.
  * Use this adapter for any simple recycler view adapter you want
  */
-abstract class BaseAdapter<P>: RecyclerView.Adapter<BaseViewHolder<P>>() {
+abstract class BaseAdapter<P> : RecyclerView.Adapter<BaseViewHolder<P>>() {
     protected var mDataList: MutableList<P> = ArrayList()
     private var mCallback: BaseAdapterCallback<P>? = null
 
@@ -54,7 +54,6 @@ abstract class BaseAdapter<P>: RecyclerView.Adapter<BaseViewHolder<P>>() {
             } else {
                 mCallback!!.onLongClick(mDataList[position], holder.itemView)
             }
-
         }
     }
 
